@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @josipdrazin
-- 👀 I’m interested in computer science 
+- 👀 I’m interested in  
 - 🌱 I’m currently learning  
-- 💞️ I’m looking to collaborate on web projects, front and back end
+- 💞️ I’m looking to collaborate on 
 - 📫 How to reach me ... 
 
 <!---
