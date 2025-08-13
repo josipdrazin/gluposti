@@ -44,11 +44,21 @@ for i in range(10):
 # Uglavnom, meni se ovakav način drfiniranja varijable i dodijeljivanja vrijednosti, pokazao brži,
 # iako nemam pojma što se zapravo događa u pozadini.
 # Najbitnije je da funkcionira.
-
 d = {i : sorted((j for j in range(10)), key=lambda x:random.random())[:random.randint(0, 9)] for i in range(10)}
 
+# dict_vals_len - lista duljina vrijednosti svakog pojedinog "ključića" u rječniku, u ovom slučaju količina elemenata u svakoj pojedinoj listi u rječniku. 
+dict_vals_len = [len(v) for k,v in d.items()]
 
+# dict_min_val_index - indeks prve pronađene liste u rječniku koja sadrži najmanje elemenata.
+# može se dobiti i na jednostavniji način.
+# naprimjer: dict_vals_len.index(min(dict_vals_len))
+dict_min_val_index = [[len(v) for k,v in d.items() ].index(min([len(v) for k,v in d.items()]))]
 
+# dict_min_val - duljina prve pronađene liste u rječniku koja sadrži najmanje elemenata.
+# ekvivalent dict_vals_len[dict_min_val_index] ili len(d[list(d.keys())[dict_min_val_index]]) ili dict_vals_len[dict_vals_len.index(min(dict_vals_len))]
+dict_min_val= [len(v) for k,v in d.items() ][ list(len(v) for k,v in d.items() ).index(min(list(len(v) for k,v in d.items())))]
+
+# i tako malo pomalo dok ne pomiješaš kabele
 
 
 
