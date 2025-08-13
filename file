@@ -1,1 +1,55 @@
-file 
+"""
+Kako napraviti rječnik čije
+vrijednosti su iskazane kao liste sa
+nasumičnom količinom elemenata koji
+su sastavljeni od nasumično odabranih
+znamenki od 1 do 10.
+"""
+
+import random
+
+########### Verzija 1 ########### 
+
+d = {}
+for i in range(10):
+    d[i] = []
+    for j in range(10):
+        d[i] += [j]
+    d[i].sort(key = lambda x: random.random())
+# ili
+    random.shuffle(d[i])
+
+# Možemo koristiti
+# d[i][:random.randint(0,len(d[i]-1))]
+# ili 
+# d[i][random.randint(0,len(d[i]-1)):]
+# ili brojne druge načine za rezanje listi.
+
+    d[i][:random.randint(0,len(d[i]-1))]
+    
+########### Verzija 2 ########### 
+
+# Verzija 2 se ne može više skratiti no što jest.
+# U usporedbi sa prvom verzijom,
+# u ovoj verziji se neke stvari ne mogu automatizirati
+# kao što je naprimjer u prvoj verziji 
+# d[i][:random.randint(0,len(d[i]-1))],
+# len(d[i]) se ne može koristiti
+# jer je rječnik prazan ili
+# u slučaju da nije prethodno definiran, nepostojeći.
+# Međutim, ova verzija ima svoje prednosti.
+# kao što su, recimo, ako varijabla "d" nije prethodno definirana
+# onda se njeno definiranje i dodjeljivanje vrijednosti 
+# sve događa na istom mjestu u memoriji ili tako nešto ...Pretpostavljam.
+# Uglavnom, meni se ovakav način drfiniranja varijable i dodijeljivanja vrijednosti, pokazao brži,
+# iako nemam pojma što se zapravo događa u pozadini.
+# Najbitnije je da funkcionira.
+
+d = {i : sorted((j for j in range(10)), key=lambda x:random.random())[:random.randint(0, 9)] for i in range(10)}
+
+
+
+
+
+
+
