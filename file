@@ -62,4 +62,7 @@ dict_min_val= [len(v) for k,v in d.items() ][ list(len(v) for k,v in d.items() )
 
 
 
-
+>>> d={k:v for k,v in sorted({i:locals()[i] for i in locals() if i in ["q","w","e","r"]}.items(),key=lambda item:item[1])}
+>>> d
+{'e': 0, 'w': 2, 'q': 3, 'r': 3} 
+>>>
