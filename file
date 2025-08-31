@@ -69,7 +69,6 @@ dict_min_val= [len(v) for k,v in d.items() ][ list(len(v) for k,v in d.items() )
 
 
 >>> import numpy as np
->>> import random
 >>> im = np.zeros((100,100,3),np.uint8)
 >>> im
 array([[[0, 0, 0],
@@ -124,7 +123,7 @@ array([[[0, 0, 0],
 >>> p = lambda a: a and [255,255,255] or [0,0,0]
 >>> for i in range(100):
 ...     for j in range(100):
-,..         im[i,j]=p(random.randint(0,1))
+,..         im[i,j]=p(np.random.randint(0,2))
 ...
 >>> im
 array([[[  0,   0,   0],
